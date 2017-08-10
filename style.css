@@ -1,3 +1,20 @@
-h1 {
+body {
+  background-color: black !important;
+  color: gold !important;
+}
+
+h1, h3 {
   text-align: center;
+}
+
+.form-inline {
+  text-align: center;
+}
+
+.menu_selection {
+display: inline-block;
+background-color: red;
+left: 50%;
+position: relative;
+transform: translate(-50%);
 }

@@ -3,27 +3,32 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <title>Lennar Luncheon Reservations</title>
-  <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" charset="utf-8"></script>
   <script src="main.js"></script>
 </head>
 
 <body>
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col">
-        <h1>Lennar Luncheon Reservation mock up</h1>
-        <h3>Please Select Menu from below</h3>
-        <form action="#">
-          <label for="lunch selection"><input type="radio" name="lunchselection">Chicken</label>
-          <label for="lunch selection"> <input type="radio" name="lunchselection">Beef</label>
-          <label for="lunch selection"> <input type="radio" name="lunchselection">Unidentified Meats</label>
-          <label for="lunch selection"> <input type="radio" name="lunchselection">Vegan</label>
-        </form>
-      </div>
+  <div class="container-fluid">
+    <div class="row justify-content-md-center">
+      <h1>Lennar Luncheon Reservation mock up</h1>
+      <h3>Please Select Menu from below</h3>
+      <form action="#" class="form-inline">
+        <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" placeholder="Name">
+        <div class="form-group">
+          <select class="form-control" id="exampleSelect1">
+            <option>Beef</option>
+            <option>Chicken</option>
+            <option>Mystery Meat</option>
+            <option>Vegan</option>
+          </select>
+        </div>
+        <button type="submit" name="button" class="btn btn-primary">Submit</button>  
+      </form>
     </div>
   </div>
 </body>
