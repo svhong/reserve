@@ -7,6 +7,7 @@
   <title>Lennar Luncheon Reservations</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
   <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" charset="utf-8"></script>
   <script src="main.js"></script>
@@ -14,11 +15,11 @@
 
 <body>
   <div class="container-fluid">
-    <div class="row justify-content-md-center">
-      <h1>Lennar Luncheon Reservation mock up</h1>
+    <div class="row justify-content-md-center the_area">
+      <h1>Welcome to the 2017 Service Award <br/> Luncheon Website</h1>
       <h3>Please Select Menu from below</h3>
       <form action="#" class="form-inline">
-        <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" placeholder="Name">
+        <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="input_data" placeholder="Name">
         <div class="form-group">
           <select class="form-control" id="exampleSelect1">
             <option>Beef</option>
@@ -27,10 +28,25 @@
             <option>Vegan</option>
           </select>
         </div>
-        <button type="submit" name="button" class="btn btn-primary">Submit</button>  
       </form>
+      <br>
+      <button name="button" class="btn btn-primary the_button">Submit</button>
     </div>
   </div>
+  <div id="Modal" class="modal fade">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <p class="modal-title">ERROR!</p>
+              </div>
+              <div class="modal-body">
+                  <p id="modal_message"></p>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+          </div>
+      </div>
+  </div>
 </body>
-
 </html>

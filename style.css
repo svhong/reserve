@@ -1,5 +1,6 @@
 body {
   background-color: black !important;
+  background: url('photos/casino_back.jpg') no-repeat;
   color: gold !important;
 }
 
@@ -17,4 +18,20 @@ background-color: red;
 left: 50%;
 position: relative;
 transform: translate(-50%);
+}
+
+.the_button {
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.modal-content {
+  background-color: black;
+  color: red;
+  position: relative;
+  top: 10%;
+  left: 50%;
+  transform:translate(-50%);
 }
