@@ -2,6 +2,8 @@ function delete_area() {
   var the_data = $("#input_data").val();
   var the_choice = $("#exampleSelect1").val();
   console.log('AJAX call to mysql DB to input', the_data, "with choice of", the_choice);
+  $('.form-inline').remove();
+  $('.the_button').remove();
   $('h1').text("ACCESS DENIED!");
   $('h3').text("Your Credentials have been logged into the MI-6 Database")
   $('<h3>').text("This device will self destruct in...").appendTo('.the_area');
@@ -20,6 +22,20 @@ function delete_area() {
   check_input_fields();
 }
 
+function db_check(){
+  $.ajax({
+      url:'database.php',
+      method: 'POST',
+      dataType: 'json',
+      success: function(response){
+          console.log('this is a success message', response);
+      },
+      error: function(response){
+        console.log('failed', response);
+      }
+  });
+}
+
 function add_rsvp(){
   //check input fields to ensure that the fields are filled out
     if(check_input_fields()){
@@ -27,22 +43,21 @@ function add_rsvp(){
     }
     //object outlining the name and the choice
     var create_rsvp = {
-        Name: $('#student_name').val(),
-        Selection: $('#exampleSelect1').val()
+        name: $('#input_data').val(),
+        selection: $('#exampleSelect1').val()
     };
     //ajax call to mysql db
     $.ajax({
-        url:'inserturl.here',
+        url:'lunch_rsvp.php',
         method: 'POST',
         data: create_rsvp,
         dataType: 'json',
         success: function(response){
-            console.log('this is a success message', response);
-            if(response.success){
-                success_message(response.message)
-            } else {
-                error_message(response.message);
-            }
+          console.log('this is a success message', response);
+          delete_area();
+        },
+        error: function(response){
+          console.log('this is an error message', response);
         }
     });
 }
@@ -62,5 +77,5 @@ function display(message) {
 }
 
 $(document).ready(function(){
-  $('.the_button').click(delete_area);
+  $('.the_button').click(add_rsvp);
 })
