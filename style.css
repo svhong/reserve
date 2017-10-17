@@ -1,30 +1,42 @@
 body {
-  background-color: black !important;
-  background: url('photos/casino_back.jpg') no-repeat;
-  color: gold !important;
+  background-color: #1e1e1e !important;
+  /*background: url('photos/casino_back.jpg') no-repeat;*/
+  color: white !important;
+  font-family: luncheon !important;
+  width: 100vw;
+  height: 100vh;
+  text-shadow: 3px 3px black;
 }
 
-h1, h3 {
+h1, h2 {
   text-align: center;
 }
 
-.form-inline {
-  text-align: center;
+.form {
+  display:inline-block;
+  position: relative;
+  width: 45% !important;
+  left: 20%;
 }
 
-.menu_selection {
-display: inline-block;
-background-color: red;
-left: 50%;
-position: relative;
-transform: translate(-50%);
-}
 
 .the_button {
-  position: relative;
-  display: inline-block;
-  left: 50%;
-  transform: translate(-50%);
+  position: fixed !important;
+  display: inline-block !important;
+  left:47%;
+}
+
+.radio {
+  margin: 10px 0 !important;
+}
+
+.the_menu {
+  display: inline-block !important;
+  position: relative !important;
+  left: 12%;
+  height: 40vh;
+  max-width: 25vw;
+  background-color: purple;
 }
 
 .modal-content {
@@ -35,3 +47,8 @@ transform: translate(-50%);
   left: 50%;
   transform:translate(-50%);
 }
+
+@font-face {
+  font-family:luncheon;
+  src: url(Gotham-Medium.otf);
+};

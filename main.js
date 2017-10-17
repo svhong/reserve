@@ -76,6 +76,27 @@ function display(message) {
     $('#Modal').modal('show');
 }
 
+function select_menu(picture){
+    switch(picture){
+      case 'filet_mignon':
+            $('<img>').attr("src","photos/filet.jpg").addClass("the_pic").appendTo('.the_menu')
+            console.log("switch statement for filet mig")
+            break;
+      case 'chicken':
+            $('.the_menu').text("CHICKEN BRUH")
+            break;
+      case 'sea_bass':
+            $('.the_menu').text("SEA BASS BRUH")
+            break;
+      case 'vegetarian':
+            $('.the_menu').text("EAT MEAT BRUH")
+            break;
+    }
+}
+
 $(document).ready(function(){
-  $('.the_button').click(add_rsvp);
-})
+  $('.the_button').click(delete_area);
+  $('input[name=entreeselect]:radio').click(function(){
+    select_menu($(this).val());
+  });
+});

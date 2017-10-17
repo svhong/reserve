@@ -1,37 +1,44 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <title>Lennar Luncheon Reservations</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
   <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" charset="utf-8"></script>
   <script src="main.js"></script>
 </head>
 
 <body>
+  <h1> Welcome to the <br/><b> LENNAR® </b><br/> 2017 SERVICE AWARD LUNCHEON </h1>
+  <h2 style="font-family:Great Vibes,cursive; color:gold; text-shadow: 3px 3px black">RSVP</h2>
   <div class="container-fluid">
-    <div class="row justify-content-md-center the_area">
-      <h1>Welcome to the 2017 Service Award <br/> Luncheon Website</h1>
-      <h3>Please Select Menu from below</h3>
-      <form action="#" class="form-inline">
-        <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="input_data" placeholder="Name">
-        <div class="form-group">
-          <select class="form-control" id="exampleSelect1">
-            <option>Beef</option>
-            <option>Chicken</option>
-            <option>Mystery Meat</option>
-            <option>Vegan</option>
-          </select>
+    <div class="row the_area">
+      <div class="col-xs-5 the_menu">
+      </div>
+      <form action="#" class="form col-xs-6">
+        <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="input_data" placeholder="First and Last Name">
+          <h3>Entree Selection</h3>
+          <div class="form-group">
+          <div class="radio">
+            <label><input type="radio" name="entreeselect" value="filet_mignon"> Filet Mignon</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="entreeselect" value="chicken"> Chicken</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="entreeselect" value="sea_bass"> Sea Bass</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="entreeselect" value="vegetarian"> Vegetarian</label>
+          </div>
         </div>
       </form>
-      <br>
-      <button name="button" class="btn btn-primary the_button">Submit</button>
     </div>
+    <button name="button" class="btn btn-primary the_button">Submit</button>
   </div>
   <div id="Modal" class="modal fade">
       <div class="modal-dialog">
@@ -49,4 +56,5 @@
       </div>
   </div>
 </body>
+  <footer>DATE AND TIME</footer>
 </html>
