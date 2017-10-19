@@ -1,28 +1,37 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <title>Lennar Luncheon Reservations</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Alex+Brush" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
   <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" charset="utf-8"></script>
   <script src="main.js"></script>
 </head>
-
 <body>
-  <h1> Welcome to the <br/><b> LENNAR® </b><br/> 2017 SERVICE AWARD LUNCHEON </h1>
-  <h2 style="font-family:Great Vibes,cursive; color:gold; text-shadow: 3px 3px black">RSVP</h2>
+  <h1> Welcome to the <br/><b> LENNAR® </b><br/> 2017 SERVICE AWARDS LUNCHEON </h1>
+  <div class="poker">
+    <span class="red">&hearts;</span>&nbsp;<span class="black">&clubs;</span>&nbsp;<span class="red">&diams;</span>&nbsp<span class="black">&spades;</span>
+  </div>
+  <h1 style="font-family: 'Alex Brush', cursive; color:gray; text-shadow: 3px 3px black; margin-bottom:20px; font-size:60px !important;">RSVP</h1>
   <div class="container-fluid">
     <div class="row the_area">
-      <div class="col-xs-5 the_menu">
+      <div class="col-xs-4 the_pic">
+        <span class="remove_me">Please Make your Selection!</span>
+        <img src="" alt="" id="the_pic" class="img-responsive" style="position:relative; left:20%">
+        <ul class="add_me">
+
+        </ul>
       </div>
       <form action="#" class="form col-xs-6">
         <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="input_data" placeholder="First and Last Name">
-          <h3>Entree Selection</h3>
-          <div class="form-group">
+        <h3>Entre&eacute; Selection</h3>
+        <div class="form-group">
           <div class="radio">
             <label><input type="radio" name="entreeselect" value="filet_mignon"> Filet Mignon</label>
           </div>
@@ -36,25 +45,30 @@
             <label><input type="radio" name="entreeselect" value="vegetarian"> Vegetarian</label>
           </div>
         </div>
+        <button action="#" name="button" class="btn btn-danger the_button">Submit</button>
       </form>
     </div>
-    <button name="button" class="btn btn-primary the_button">Submit</button>
+  </div>
+  <div class="row footer">
+    <div class="col-xs-2"></div>
+    <div class="col-xs-6">DECEMBER 8TH @ 11AM <br>MARCONI AUTOMOTIVE MUSEUM: 1302 INDUSTRIAL DR. TUSTIN, CA 92780</div>
+    <div class="col-xs-4"></div>
   </div>
   <div id="Modal" class="modal fade">
-      <div class="modal-dialog">
-          <div class="modal-content">
-              <div class="modal-header">
-                  <p class="modal-title">ERROR!</p>
-              </div>
-              <div class="modal-body">
-                  <p id="modal_message"></p>
-              </div>
-              <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              </div>
-          </div>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <p class="modal-title">ERROR!</p>
+        </div>
+        <div class="modal-body">
+          <p id="modal_message"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
       </div>
+    </div>
   </div>
 </body>
-  <footer>DATE AND TIME</footer>
+
 </html>
