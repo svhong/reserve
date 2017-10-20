@@ -1,6 +1,16 @@
 var the_data = [];
 function delete_area() {
-  $(".modal_area").html("Hello" + the_data[0].name + "your order is" + the_data[0].selection);// It works, just need to add css and other stuff
+  change_buttons();
+$(".modal_area").html("");
+$("<p>").text("Confirmation #"+the_data[0].id).css({
+  "font-size":"50px",
+  "text-align":"center"
+}).appendTo(".modal_area");
+$("<p>").text("Thank you for RSVPing " + the_data[0].name +"!").css({
+  "font-size":"30px",
+  "text-align":"center"
+}).appendTo(".modal_area");
+  // $(".modal_area").html("Confirmation #"+the_data[0].id+"<br/>"+"Thank you for RSVPing " + the_data[0].name +"!"+ "<br/>" + "your selection was: " + the_data[0].selection).css("text-align","center");// It works, just need to add css and other stuff
 }
 
 // function db_check() {
@@ -148,6 +158,10 @@ function select_menu(picture) {
   }
 }
 
+function change_buttons(){
+  $(".submit_button").remove();
+  $(".done_button").text("Done!");
+}
 $(document).ready(function() {
   $('.the_button').click(rsvp_modal);
   $('.submit_button').click(add_rsvp);
