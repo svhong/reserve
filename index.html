@@ -13,8 +13,20 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" charset="utf-8"></script>
   <script src="main.js"></script>
 </head>
+
 <body>
-  <h1> Welcome to the <br/><b> LENNAR® </b><br/> 2017 SERVICE AWARDS LUNCHEON </h1>
+  <div class="bg">
+
+  </div>
+  <div class="cover">
+MARCONI AUTOMOTIVE MUSEUM: 1302 INDUSTRIAL DR. TUSTIN, CA 92780
+  </div>
+  <h1> Welcome to the</h1>
+  <div class="the_button">
+    <span style="font-weight:bolder;">RSVP<br/>Click Here!</span>
+  </div>
+
+  <!--
   <div class="poker">
     <span class="red">&hearts;</span>&nbsp;<span class="black">&clubs;</span>&nbsp;<span class="red">&diams;</span>&nbsp<span class="black">&spades;</span>
   </div>
@@ -53,8 +65,8 @@
     <div class="col-xs-2"></div>
     <div class="col-xs-6">DECEMBER 8TH @ 11AM <br>MARCONI AUTOMOTIVE MUSEUM: 1302 INDUSTRIAL DR. TUSTIN, CA 92780</div>
     <div class="col-xs-4"></div>
-  </div>
-  <div id="Modal" class="modal fade">
+  </div> -->
+  <div id="error_modal" class="modal fade">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -65,6 +77,49 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="rsvp_modal" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <p class="modal-title" style="font-size:30px; margin-top:10px">Welcome To the Luncheon RSVP</p>
+        </div>
+        <div class="modal-body row modal_area">
+          <div class="col-xs-4 the_pic">
+            <span class="remove_me">Please Make your Selection!</span>
+            <img src="" alt="" id="the_pic" class="img-responsive" style="position:relative; left:20%">
+            <ul class="add_me">
+
+            </ul>
+          </div>
+          <form action="#" class="form col-xs-6">
+            <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="input_data" placeholder="First and Last Name">
+            <h3>Entre&eacute; Selection</h3>
+            <div class="form-group">
+              <div class="radio">
+                <label><input type="radio" name="entreeselect" value="Filet Mignon"> Filet Mignon</label>
+              </div>
+              <div class="radio">
+                <label><input type="radio" name="entreeselect" value="Chicken"> Chicken</label>
+              </div>
+              <div class="radio">
+                <label><input type="radio" name="entreeselect" value="Sea Bass"> Sea Bass</label>
+              </div>
+              <div class="radio">
+                <label><input type="radio" name="entreeselect" value="Vegetarian"> Vegetarian / Vegan</label>
+              </div>
+              <div class="radio">
+                <label><input type="radio" name="entreeselect" value="Not Attending"> Unable to Attend</label>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+            <button name="button" class="btn btn-danger submit_button">Submit</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
         </div>
       </div>
     </div>
