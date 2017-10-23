@@ -9,7 +9,7 @@ $list = mysqli_query($conn,$query);
 if(mysqli_affected_rows($conn) > 0){
   $output['success'] = true;
   $output['message'][] = 'It worked!';
-  $output['info'][] = mysqli_insert_id($conn); 
+  $output['info'][] = mysqli_insert_id($conn);
 } else {
   $output['error'] = true;
   $output['message'][] = 'Didnt work bruh';

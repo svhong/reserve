@@ -38,7 +38,7 @@ function check_data(){
 
     function return_data(callback){
       $.ajax({
-        url: 'database.php',
+        url: 'admin/database.php',
         method: 'POST',
         dataType: 'json',
         success: function(response) {
@@ -68,7 +68,7 @@ function add_rsvp() {
   };
   //ajax call to mysql db
   $.ajax({
-    url: 'lunch_rsvp.php',
+    url: 'admin/lunch_rsvp.php',
     method: 'POST',
     data: create_rsvp,
     dataType: 'json',
