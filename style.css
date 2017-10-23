@@ -109,6 +109,11 @@ h2 {
   left: 14%;
 }
 
+.error_area {
+  margin-top: 6px;
+
+}
+
 .the_button {
   display: inline-block;
   font-family: 'Alex Brush', cursive;

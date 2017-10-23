@@ -32,7 +32,7 @@ $("<p>").text("Thank you for RSVPing " + the_data[0].name +"!").css({
 
 function check_data(){
     return_data(function(){
-      console.log(the_data[0])
+
       delete_area();
     });
 
@@ -49,7 +49,7 @@ function check_data(){
           callback();
         },
         error: function(response) {
-          console.log('failed', response);
+          console.error("Error, unable to reach the server", response);
         }
       });
     }
@@ -58,6 +58,7 @@ function check_data(){
 function add_rsvp() {
   //check input fields to ensure that the fields are filled out
   if (check_input_fields()) {
+    error_input();
     return;
   }
   //object outlining the name and the choice
@@ -76,18 +77,43 @@ function add_rsvp() {
     },
     error: function(response) {
       console.log('this is an error message', response);
+      error_message();
     }
   });
 
 }
 
+function error_message(){
+  $(".error_area").text("Sorry, there was an error. Please try again.").css({
+    "font-size":"10px",
+    "color":"red"
+  })
+}
+
+function error_input(){
+  $(".error_area").text('All input fields must contain at least one non-space character.').css({
+    "font-size":"10px",
+    "color":"red"
+  })
+}
+
+function error_selection(){
+  $(".error_area").text('All input fields must contain at least one non-space character.').css({
+    "font-size":"10px",
+    "color":"red"
+  })
+}
+
 function check_input_fields() {
   var name = $('#input_data').val().replace(/\s+/g, '');
   if (name == '') {
-    var message = 'All input fields must contain at least one non-space character.';
     return true;
   }
+
 }
+
+
+
 
 // function display(message) {
 //   $('#modal_message').html(message);
