@@ -9,7 +9,7 @@ if (isset($_POST['id'])){
     if ($result && mysqli_affected_rows($conn) == 1){
         $response = [
             'success' => true,
-            'message' => 'Student successfully deleted!'
+            'message' => 'RSVP successfully deleted!'
         ];
     } else {
         $response['message'][] = 'There was an error';

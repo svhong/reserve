@@ -1,34 +1,67 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title></title>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="table.css">
-    <script src="admin.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" charset="utf-8"></script>
-    <script src="main.js"></script>
-  </head>
-  <body>
-    <div class="container">
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Selection</th>
-        <th>Date</th>
-        <th>Edit</th>
-      </tr>
-    </thead>
-    <tbody class="append_here">
-    </tbody>
-  </div>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title></title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="table.css">
+  <script src="admin.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" charset="utf-8"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-9">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th class="col-md-1">ID</th>
+                <th class="col-md-2">Name</th>
+                <th class="col-md-2">Selection</th>
+                <th class="col-md-2">Date</th>
+                <th class="col-md-1">Edit</th>
+              </tr>
+            </thead>
+            <tbody class="append_here">
+            </tbody>
+            </div>
+      <div class="info_pane">
+          <div class="the_message"></div>
+          <div class="the_info">
+            <div class="row">
+              <div class="col-xs-6 the_label">
+                <div class="filet">Filet</div>
+                <div class="chicken">Chicken</div>
+                <div class="seabass">Sea Bass</div>
+                <div class="vegetarian">Vegetarian</div>
+                <div class="na">Not Attending</div>
+                <div class="other">Other</div>
+                <div class="total">Total</div>
+              </div>
+
+              <div class="col-xs-6 the_count">
+                <div class="filet_count">0</div>
+                <div class="chicken_count">0</div>
+                <div class="seabass_count">0</div>
+                <div class="vegetarian_count">0</div>
+                <div class="na_count">0</div>
+                <div class="other_count">0</div>
+                <div class="total_count">0</div>
   <button class="refresh_button btn btn-primary" onclick="check_data()">Refresh</button>
-  </body>
-  <script>
-    check_data();
-  </script>
+              </div>
+
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+<script>
+  check_data();
+</script>
+
 </html>

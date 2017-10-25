@@ -1,3 +1,40 @@
-.the_table tr td {
-  border: 2px solid black
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+.the_message {
+  height:10% !important;
+  background-color: yellow;
+  text-align: center;
+}
+
+.the_info {
+  height:80% !important;
+  background-color:lightblue;
+}
+
+.the_label {
+  text-align:center;
+}
+
+.the_count {
+  text-align: center;
+}
+
+.the_label > div {
+  margin-bottom:10px;
+  border-bottom: 2px solid black;
+}
+
+.the_count > div {
+  margin-bottom:10px;
+  border-bottom: 2px solid black;
+}
+.info_pane {
+  width: 30% !important;
+  height: 70vh !important;
+  position: fixed !important;
+  right: 0;
+
 }

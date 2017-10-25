@@ -4,15 +4,16 @@ $response['success']= false;
 $response['error'] = false;
 if (isset($_POST['id'])){
     $rsvp_id = $_POST['id'];
-    $query = "UPDATE `rsvp` SET `selection` = variablehere WHERE ID=$rsvp_id";
+    $change = $_POST['selection'];
+    $query = "UPDATE rsvp SET selection = '$change'  WHERE ID = '$rsvp_id'";
     $result = mysqli_query($conn,$query);
     if ($result && mysqli_affected_rows($conn) == 1){
         $response = [
             'success' => true,
-            'message' => 'Student successfully deleted!'
+            'message' => 'Selection successfuly changed!'
         ];
     } else {
-        $response['message'][] = 'There was an error';
+        $response['message'][] =  'There was an error, please try again';
     };
     print(json_encode($response));
 }

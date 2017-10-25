@@ -6,7 +6,7 @@ $query = "SELECT * FROM `rsvp`";
 $list = mysqli_query($conn, $query);
 if(mysqli_num_rows($list)){
     $output['success'] = true;
-    $output['message'] = 'Data retrieval success!';
+    $output['message'] = 'List Retrieved!';
     while ($row = mysqli_fetch_assoc($list)) {
         $output['data'][] = $row;
     }

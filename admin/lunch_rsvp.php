@@ -12,7 +12,7 @@ if(mysqli_affected_rows($conn) > 0){
   $output['info'][] = mysqli_insert_id($conn);
 } else {
   $output['error'] = true;
-  $output['message'][] = 'Didnt work bruh';
+  $output['message'][] = 'There was an error';
 }
 print(json_encode($output));
  ?>
