@@ -180,7 +180,7 @@ function select_menu(picture) {
       break;
     default:
       $(".add_me").children().remove();
-      $('#the_pic').attr("src", "photos/bondmartini.jpg");
+      $('#the_pic').attr("src", "photos/cantgo.jpg");
   }
 }
 

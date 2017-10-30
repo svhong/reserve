@@ -20,11 +20,22 @@ body {
 
 .cover {
   height: 3%;
-  position: fixed;
+  width: 50%;
+  position: absolute;
   background-color: #191919;
   top: 83%;
   left: 50%;
   transform: translate(-50%);
+  text-align: center;
+}
+
+.deadline {
+  display:inline-block !important;
+  position: absolute;
+  bottom:20px;
+  left:50%;
+  transform:translate(-50%);
+
 }
 
 h1 {

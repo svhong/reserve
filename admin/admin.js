@@ -56,32 +56,39 @@ function check_data() {
     });
   }
 }
-
+//function to post data from array to the dom
 function db_to_dom(object) {
   var id_table = $("<td>").html(object['id']);
-  var name_table = $("<td>").html(object['name']);
-  var selection_table = $("<td>").attr({
+  var name_table = $("<td>").attr({
     "contenteditable": true,
     "id_num": object['id']
-  }).html(object['selection']).bind("keydown", function(e) {
+  }).html(object['name']).bind("keydown", function(e) {
     if (e.which === 13) {
       e.preventDefault();
-      edit_object(this, this.textContent);
+      edit_object2(this, this.textContent);
     } else {
       return;
     }
   });
+  var selection_table = $("<td>").html(object['selection']).click(function(){
+    console.log("I was clicked!")
+      });
   var date_table = $("<td>").html(object['date']);
   var del = $("<button>").addClass('btn btn-danger btn-xs').text("delete").attr({
     "id_num": object['id']
   }).click(function() {
     remove_rsvp(this);
   });
+  var edit = $("<button>").addClass('btn btn-success btn-xs').text("edit").attr({
+    "id_num": object['id']
+  }).click(function() {
+    console.log("edit me!")
+  });
   var tr = $("<tr>").addClass('parent_row');
-  tr.append(id_table, name_table, selection_table, date_table, del);
+  tr.append(id_table, name_table, selection_table, date_table, edit, del);
   $('.append_here').append(tr);
 }
-
+//function to delete the rsvp via delete button
 function remove_rsvp(element) {
   var delete_data = {
     'id': $(element).attr('id_num')
@@ -102,7 +109,7 @@ function remove_rsvp(element) {
     }
   });
 }
-
+//callback function for the selection change
 function edit_object(element, value) {
 
   edit_selection(function(object) {
@@ -126,6 +133,34 @@ function edit_object(element, value) {
     var edit_select = {
       'id': $(element).attr('id_num'),
       'selection': value
+    };
+    callback(edit_select);
+  }
+}
+//Callback function for the name change
+function edit_object2(element, value) {
+
+  edit_selection(function(object) {
+    $.ajax({
+      url: 'edit_name.php',
+      method: 'POST',
+      data: object,
+      dataType: 'json',
+      success: function(response) {
+        if (response.success) {
+          display_success(response.message)
+          check_data();
+        } else {
+          display_error(response.message);
+        }
+      }
+    });
+  })
+
+  function edit_selection(callback) {
+    var edit_select = {
+      'id': $(element).attr('id_num'),
+      'name': value
     };
     callback(edit_select);
   }
