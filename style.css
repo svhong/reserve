@@ -92,8 +92,6 @@ h2 {
 }
 
 #the_pic {
-  box-shadow: 5px 5px black;
-  border-radius: 25px;
   display: inline-block;
   transition-duration: 2s;
   max-width: 90%;
@@ -110,7 +108,7 @@ h2 {
   /* Opera < 12.1 */
   animation: fadein 5s;
   position: relative;
-  left: 15%
+  left: 50%;
 }
 
 .add_me {

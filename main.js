@@ -137,10 +137,14 @@ function select_menu(picture) {
         "-moz-animation": "fadein 2s",
         "-ms-animation": "fadein 2s",
         "-o-animation": "fadein 2s",
-        "animation": "fadein 2s"
+        "animation": "fadein 2s",
+        "box-shadow": "5px 5px black",
+        "border-radius": "25px"
       });
       $("<li>").text("Coffee Rubbed Prime Filet Mignon").appendTo(".add_me");
       $("<li>").text("Tart Cherry Infused Demiglace").appendTo(".add_me");
+      $("<li>").text("Aged Cheddar Potato Gratin").appendTo(".add_me");
+      $("<li>").text("Glazed Heirloom Carrots").appendTo(".add_me");
       break;
     case 'Chicken':
       $(".add_me").children().remove();
@@ -149,10 +153,14 @@ function select_menu(picture) {
         "-moz-animation": "fadein 2s",
         "-ms-animation": "fadein 2s",
         "-o-animation": "fadein 2s",
-        "animation": "fadein 2s"
+        "animation": "fadein 2s",
+        "box-shadow": "5px 5px black",
+        "border-radius": "25px"
       });
       $("<li>").text("Butter Roasted Chicken Breast").appendTo(".add_me");
       $("<li>").text("Charred Chanterelle and Rosemary Creme").appendTo(".add_me");
+      $("<li>").text("Aged Cheddar Potato Gratin").appendTo(".add_me");
+      $("<li>").text("Glazed Heirloom Carrots").appendTo(".add_me");
       break;
     case 'Sea Bass':
       $(".add_me").children().remove();
@@ -161,10 +169,14 @@ function select_menu(picture) {
         "-moz-animation": "fadein 2s",
         "-ms-animation": "fadein 2s",
         "-o-animation": "fadein 2s",
-        "animation": "fadein 2s"
+        "animation": "fadein 2s",
+        "box-shadow": "5px 5px black",
+        "border-radius": "25px"
       });
       $("<li>").text("Sea Bass Poached in Butter").appendTo(".add_me");
       $("<li>").text("Sautéed Frisee and Caper Beurre Blanc").appendTo(".add_me");
+      $("<li>").text("Aged Cheddar Potato Gratin").appendTo(".add_me");
+      $("<li>").text("Glazed Heirloom Carrots").appendTo(".add_me");
       break;
     case 'Vegetarian':
       $(".add_me").children().remove();
@@ -173,14 +185,16 @@ function select_menu(picture) {
         "-moz-animation": "fadein 2s",
         "-ms-animation": "fadein 2s",
         "-o-animation": "fadein 2s",
-        "animation": "fadein 2s"
+        "animation": "fadein 2s",
+        "box-shadow": "5px 5px black",
+        "border-radius": "25px"
       });
       $("<li>").text("BBQ Jack Fruit Stuffed Avocados").appendTo(".add_me");
       $("<li>").text("Sweet Corn Succotash").appendTo(".add_me");
       break;
     default:
       $(".add_me").children().remove();
-      $('#the_pic').attr("src", "photos/cantgo.jpg");
+      $('#the_pic').attr("src", "photos/apologies2.jpg");
   }
 }
 

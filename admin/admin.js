@@ -9,7 +9,8 @@ var other_counter = 0;
 function check_data() {
   return_data(function() {
     for (var i = 0; i <= the_data.length; i++) {
-      db_to_dom(the_data[i]);
+      db_to_dom(the_data[i], i);
+      switch_selections(the_data[i].selection, i);
       update_info();
     }
   });
@@ -57,7 +58,7 @@ function check_data() {
   }
 }
 //function to post data from array to the dom
-function db_to_dom(object) {
+function db_to_dom(object, cycle) {
   var id_table = $("<td>").html(object['id']);
   var name_table = $("<td>").attr({
     "contenteditable": true,
@@ -70,9 +71,7 @@ function db_to_dom(object) {
       return;
     }
   });
-  var selection_table = $("<td>").html(object['selection']).click(function(){
-    console.log("I was clicked!")
-      });
+  var selection_table = $("<td class=dropdown>").html("<select class='the_dropdown" + cycle +"'><option value='Filet Mignon'>Filet Mignon</option><option value='Chicken'>Chicken</option><option value='Sea Bass'>Sea Bass</option><option value = 'Vegetarian'>Vegetarian</option><option value='Not Attending'>Not Attending</option></select>");
   var date_table = $("<td>").html(object['date']);
   var del = $("<button>").addClass('btn btn-danger btn-xs').text("delete").attr({
     "id_num": object['id']
@@ -82,7 +81,14 @@ function db_to_dom(object) {
   var edit = $("<button>").addClass('btn btn-success btn-xs').text("edit").attr({
     "id_num": object['id']
   }).click(function() {
-    console.log("edit me!")
+    var id = $(this).attr("id_num");
+    var sibs = $(this).siblings();
+    var edit_selection_object = null;
+    $(sibs).children().each(function(){
+      edit_selection_object = {"id":id,"selection":$(this).val()};
+    });
+    console.log(edit_selection_object);
+    ajax_edit_selection(edit_selection_object);
   });
   var tr = $("<tr>").addClass('parent_row');
   tr.append(id_table, name_table, selection_table, date_table, edit, del);
@@ -109,34 +115,52 @@ function remove_rsvp(element) {
     }
   });
 }
-//callback function for the selection change
-function edit_object(element, value) {
 
-  edit_selection(function(object) {
-    $.ajax({
-      url: 'edit.php',
-      method: 'POST',
-      data: object,
-      dataType: 'json',
-      success: function(response) {
-        if (response.success) {
-          display_success(response.message)
-          check_data();
-        } else {
-          display_error(response.message);
-        }
+function ajax_edit_selection(object){
+  $.ajax({
+    url: 'edit.php',
+    method: 'POST',
+    data: object,
+    dataType: 'json',
+    success: function(response) {
+      if (response.success) {
+        display_success(response.message)
+        check_data();
+      } else {
+        display_error(response.message);
       }
-    });
-  })
-
-  function edit_selection(callback) {
-    var edit_select = {
-      'id': $(element).attr('id_num'),
-      'selection': value
-    };
-    callback(edit_select);
-  }
+    }
+  });
 }
+
+//callback function for the selection change
+// function edit_object(element, value) {
+//
+//   edit_selection(function(object) {
+//     $.ajax({
+//       url: 'edit.php',
+//       method: 'POST',
+//       data: object,
+//       dataType: 'json',
+//       success: function(response) {
+//         if (response.success) {
+//           display_success(response.message)
+//           check_data();
+//         } else {
+//           display_error(response.message);
+//         }
+//       }
+//     });
+//   })
+//
+//   function edit_selection(callback) {
+//     var edit_select = {
+//       'id': $(element).attr('id_num'),
+//       'selection': value
+//     };
+//     callback(edit_select);
+//   }
+// }
 //Callback function for the name change
 function edit_object2(element, value) {
 
@@ -164,6 +188,20 @@ function edit_object2(element, value) {
     };
     callback(edit_select);
   }
+}
+
+function switch_selections(data, cycle){
+  if (data){
+    $('.the_dropdown' + cycle).children().each(function(){
+       if($(this).val() == data){
+         $(this).attr("selected","selected");
+       }
+
+      });
+  } else {
+    console.error("not going through")
+  }
+
 }
 
 function update_info(){
